@@ -129,7 +129,6 @@
   }
   .about-text{flex:1;min-width:280px}
   .about-text p{font-size:16px;color:var(--text);margin-bottom:16px}
-  .about-text p.muted{color:var(--muted)}
   .about-facts{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
   .fact{
     background:#fff;border:1px solid var(--border);border-radius:12px;
@@ -137,6 +136,51 @@
   }
   .fact b{display:block;font-size:22px;color:var(--dark);line-height:1.2}
   .fact span{font-size:13px;color:var(--muted)}
+
+  /* Сворачиваемый текст в блоке "Обо мне" */
+  .about-details {
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+  }
+  .about-details summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--dark);
+    list-style: none; /* убираем стандартный маркер */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s;
+  }
+  .about-details summary:hover {
+    color: var(--accent-dark);
+  }
+  .about-details summary::-webkit-details-marker {
+    display: none; /* убираем маркер в Safari/Chrome */
+  }
+  .about-details summary::after {
+    content: "▼"; /* стрелочка вниз */
+    font-size: 12px;
+    transition: transform 0.3s;
+    color: var(--accent);
+  }
+  .about-details[open] summary::after {
+    transform: rotate(180deg); /* переворачиваем стрелочку при открытии */
+  }
+  .about-details .about-text-content {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
   /* PAINS */
   .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
@@ -594,11 +638,14 @@
           с которыми я работаю годами: отдельно электрик, отдельно плиточник, отдельно маляр.
           Я знаю, кто в чём силён, и ставлю на объект только тех, кого проверил лично.
         </p>
-        <p class="muted">
-          Я приезжаю на приёмку скрытых работ, проверяю закупки по чекам, каждый день на связи
-          с мастерами и с вами. Если что-то идёт не так — разбираюсь я, а не вы. Именно за это
-          мне и платят: за личную ответственность, а не за вывеску.
-        </p>
+        <details class="about-details">
+          <summary>Моя личная ответственность</summary>
+          <div class="about-text-content">
+            Я приезжаю на приёмку скрытых работ, проверяю закупки по чекам, каждый день на связи
+            с мастерами и с вами. Если что-то идёт не так — разбираюсь я, а не вы. Именно за это
+            мне и платят: за личную ответственность, а не за вывеску.
+          </div>
+        </details>
         <div class="about-facts">
           <div class="fact"><b>3+ года</b><span>личного руководства ремонтами</span></div>
           <div class="fact"><b>30+ квартир</b><span>сдано в Екатеринбурге</span></div>
@@ -750,7 +797,7 @@
   </div>
 </section>
 
-<!-- ===== GUARANTEE (Новый дизайн) ===== -->
+<!-- ===== GUARANTEE ===== -->
 <section class="section" id="guarantee">
   <div class="wrap">
     <div class="guarantee-flex">
@@ -1276,7 +1323,7 @@ document.addEventListener('keydown', (e) => {
     navLightbox(-1);
   } else if (e.key === 'ArrowRight') {
     navLightbox(1);
-  } 
+  }
 });
 
 // Поддержка свайпов в лайтбоксе
