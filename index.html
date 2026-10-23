@@ -275,13 +275,9 @@
 
   /* ===== SHOPS ===== */
   .shops{
-    /* 
-      Чтобы поставить свою картинку, замените URL ниже на путь к вашему файлу,
-      например: url("images/shops-bg.jpg")
-    */
     background:
       linear-gradient(rgba(28,35,49,.92),rgba(28,35,49,.95)),
-      url("images/shops-bg.jpg?auto=format&fit=crop&w=1600&q=60") center/cover no-repeat;
+      url("images/shops-bg.jpg") center/cover no-repeat;
     color:#fff;
   }
   .shops .section-sub{color:#b9c0cf}
@@ -308,7 +304,7 @@
   .form-section{
     background:
       linear-gradient(rgba(20,26,38,.9),rgba(20,26,38,.95)),
-      url("images/form-bg.jpg?auto=format&fit=crop&w=1600&q=60") center/cover no-repeat;
+      url("images/form-bg.jpg") center/cover no-repeat;
     color:#fff;padding:70px 0;
   }
   .form-flex{display:flex;flex-wrap:wrap;gap:50px;align-items:center;justify-content:space-between}
@@ -373,23 +369,45 @@
   .footer-bottom a{color:#b9c0cf}
   .footer-bottom a:hover{color:var(--accent)}
 
-  /* FLOATING CONTACTS */
+  /* ===== FLOATING CONTACTS (mobile) ===== */
   .float-contacts{
     position:fixed;right:16px;bottom:16px;z-index:100;
+    display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+  }
+  .float-contacts .main-btn{
+    width:60px;height:60px;border-radius:50%;background:var(--accent);color:var(--dark);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(245,166,35,.4);transition:.3s;cursor:pointer;
+    border: none;
+  }
+  .float-contacts .main-btn svg{width:28px;height:28px;fill:var(--dark);}
+  .float-contacts .main-btn.open{transform:rotate(45deg);}
+  
+  .float-contacts .sub-menu{
     display:flex;flex-direction:column;gap:10px;
+    opacity:0; pointer-events:none; transform:translateY(10px);
+    transition:.3s; margin-bottom: 5px;
   }
-  .float-contacts a{
-    width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 24px rgba(0,0,0,.25);transition:.2s;
+  .float-contacts .sub-menu.active{
+    opacity:1; pointer-events:all; transform:translateY(0);
   }
-  .float-contacts a svg{width:26px;height:26px;fill:#fff}
+
+  .float-contacts .sub-menu a{
+    width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);transition:.2s;
+  }
+  .float-contacts .sub-menu a:hover{transform:scale(1.05);}
+  .float-contacts .sub-menu a svg{width:22px;height:22px;fill:#fff}
+  
   .float-contacts .wa{background:var(--wa)}
   .float-contacts .tg{background:var(--tg)}
   .float-contacts .max{background:var(--max)}
-  .float-contacts .call{background:var(--accent)}
-  .float-contacts .call svg{fill:var(--dark)}
-  .float-contacts a:hover{transform:scale(1.08)}
-  @media(min-width:861px){.float-contacts{display:none}}
+  .float-contacts .call{background:#333;color:#fff}
+  .float-contacts .call svg{fill:#fff}
+
+  @media(min-width:861px){
+    .float-contacts{display:none}
+  }
 </style>
 </head>
 <body>
@@ -821,18 +839,23 @@
 
 <!-- ===== FLOATING CONTACTS (mobile) ===== -->
 <div class="float-contacts">
-  <a href="https://wa.me/79221230234" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.93-1.15-4.8-4.15-4.95-4.34-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.66-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
-  </a>
-  <a href="https://t.me/The_fabo" class="tg" target="_blank" rel="noopener" aria-label="Telegram">
-    <svg viewBox="0 0 24 24"><path d="M9.04 15.47l-.38 5.34c.54 0 .78-.23 1.06-.5l2.55-2.45 5.28 3.87c.97.53 1.66.25 1.92-.9l3.48-16.32.01-.01c.31-1.43-.52-1.99-1.47-1.63L1.6 9.9C.2 10.45.22 11.25 1.36 11.6l5.11 1.59L18.3 6.1c.56-.37 1.07-.16.65.21L9.04 15.47z"/></svg>
-  </a>
-  <a href="https://max.ru/+79221230234" class="max" target="_blank" rel="noopener" aria-label="MAX">
-    <svg viewBox="0 0 24 24"><path d="M4 3h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9-6-9z"/></svg>
-  </a>
-  <a href="tel:+79221230234" class="call" aria-label="Позвонить">
-    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
-  </a>
+  <div class="sub-menu" id="subMenu">
+    <a href="https://wa.me/79221230234" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.93-1.15-4.8-4.15-4.95-4.34-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.66-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+    </a>
+    <a href="https://t.me/The_fabo" class="tg" target="_blank" rel="noopener" aria-label="Telegram">
+      <svg viewBox="0 0 24 24"><path d="M9.04 15.47l-.38 5.34c.54 0 .78-.23 1.06-.5l2.55-2.45 5.28 3.87c.97.53 1.66.25 1.92-.9l3.48-16.32.01-.01c.31-1.43-.52-1.99-1.47-1.63L1.6 9.9C.2 10.45.22 11.25 1.36 11.6l5.11 1.59L18.3 6.1c.56-.37 1.07-.16.65.21L9.04 15.47z"/></svg>
+    </a>
+    <a href="https://max.ru/+79221230234" class="max" target="_blank" rel="noopener" aria-label="MAX">
+      <svg viewBox="0 0 24 24"><path d="M4 3h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9-6-9z"/></svg>
+    </a>
+    <a href="tel:+79221230234" class="call" aria-label="Позвонить">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+  </div>
+  <button class="main-btn" id="mainContactBtn" aria-label="Связаться">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+  </button>
 </div>
 
 <!-- ===== SCRIPT: отправка заявки в WhatsApp ===== -->
@@ -1082,6 +1105,30 @@ lightbox.addEventListener('touchend', (e) => {
 // Запускаем рендер при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
   renderPortfolio();
+});
+</script>
+
+<!-- ===== SCRIPT: Мобильное меню связи ===== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mainBtn = document.getElementById('mainContactBtn');
+  const subMenu = document.getElementById('subMenu');
+
+  if (mainBtn && subMenu) {
+    mainBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      mainBtn.classList.toggle('open');
+      subMenu.classList.toggle('active');
+    });
+
+    // Закрываем меню при клике вне его области
+    document.addEventListener('click', function(e) {
+      if (!mainBtn.contains(e.target) && !subMenu.contains(e.target)) {
+        mainBtn.classList.remove('open');
+        subMenu.classList.remove('active');
+      }
+    });
+  }
 });
 </script>
 
