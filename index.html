@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Александр — прораб в Екатеринбурге. Ремонт квартир под личным контролем</title>
+<meta name="description" content="Александр, частный прораб в Екатеринбурге. Более 3 лет ремонтов под личным руководством. Проверенные мастера, скидки в магазинах, договор и гарантия. Без офиса и накруток.">
+<style>
+  :root{
+    --dark:#1c2331;
+    --dark2:#252f42;
+    --accent:#f5a623;
+    --accent-dark:#d98a0b;
+    --light:#f7f8fa;
+    --text:#2b2f38;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --radius:14px;
+    --maxw:1140px;
+    --wa:#25D366;
+    --tg:#229ED9;
+    --max:#6d5cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color:var(--text);line-height:1.6;background:#fff;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .btn{
+    display:inline-block;background:var(--accent);color:var(--dark);
+    padding:14px 28px;border-radius:10px;font-weight:700;font-size:16px;
+    border:none;cursor:pointer;transition:.2s;text-align:center;
+  }
+  .btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+  .btn-outline{
+    background:transparent;border:2px solid rgba(255,255,255,.5);color:#fff;
+  }
+  .btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff}
+  .section{padding:70px 0}
+  .section-title{font-size:32px;font-weight:800;line-height:1.25;margin-bottom:12px}
+  .section-sub{color:var(--muted);font-size:17px;max-width:640px;margin-bottom:40px}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(28,35,49,.97);
+    backdrop-filter:blur(8px);color:#fff;padding:12px 0;
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .logo{font-weight:800;font-size:18px;letter-spacing:.3px;line-height:1.2}
+  .logo a{color:#fff;display:block}
+  .logo a:hover{color:var(--accent)}
+  .logo span{color:var(--accent)}
+  .logo small{display:block;font-size:11px;font-weight:400;color:#b9c0cf}
+  .header-right{display:flex;align-items:center;gap:14px}
+  .header-phone{font-weight:700;font-size:16px;white-space:nowrap;text-align:right}
+  .header-phone small{display:block;font-weight:400;font-size:12px;color:#b9c0cf}
+  .header-social{display:flex;gap:8px}
+  .icon-btn{
+    width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    transition:.2s;flex-shrink:0;
+  }
+  .icon-btn svg{width:20px;height:20px;fill:#fff}
+  .icon-btn.wa{background:var(--wa)}
+  .icon-btn.tg{background:var(--tg)}
+  .icon-btn.max{background:var(--max)}
+  .icon-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+  @media(max-width:860px){
+    .header-right .btn{display:none}
+    .header-social{display:none}
+  }
+  @media(max-width:480px){
+    .header-phone{font-size:14px}
+  }
+
+  /* HERO */
+  .hero{
+    background:
+      linear-gradient(rgba(20,26,38,.75),rgba(20,26,38,.85)),
+      url("images/hero-bg.jpg") center/cover no-repeat;
+    color:#fff;padding:90px 0 80px;
+  }
+  .hero h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.15;max-width:760px}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p.lead{font-size:18px;color:#cfd6e3;margin:22px 0 32px;max-width:620px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+  .trust-row{
+    display:flex;flex-wrap:wrap;gap:26px;margin-top:44px;padding-top:26px;
+    border-top:1px solid rgba(255,255,255,.15);
+  }
+  .trust-item{font-size:14px;color:#cfd6e3;display:flex;align-items:center;gap:8px}
+  .trust-item b{color:#fff;font-size:20px;font-weight:800}
+
+  /* ABOUT */
+  .about{background:var(--light)}
+  .about-flex{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+  .about-photo{
+    flex:0 0 260px;height:260px;border-radius:var(--radius);
+    background:linear-gradient(135deg,#2b3a4f,#1c2331);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--accent);font-size:72px;font-weight:800;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+  }
+  .about-text{flex:1;min-width:280px}
+  .about-text p{font-size:16px;color:var(--text);margin-bottom:16px}
+  .about-text p.muted{color:var(--muted)}
+  .about-facts{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+  .fact{
+    background:#fff;border:1px solid var(--border);border-radius:12px;
+    padding:14px 18px;min-width:150px;
+  }
+  .fact b{display:block;font-size:22px;color:var(--dark);line-height:1.2}
+  .fact span{font-size:13px;color:var(--muted)}
+
+  /* PAINS */
+  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .pain-card{
+    background:#fff;border-radius:var(--radius);padding:26px;
+    border:1px solid var(--border);position:relative;
+  }
+  .pain-card .ico{font-size:26px;margin-bottom:12px;display:block}
+  .pain-card h3{font-size:17px;margin-bottom:8px}
+  .pain-card p{font-size:14.5px;color:var(--muted)}
+  .pain-card::after{
+    content:"✓ решаю";position:absolute;top:14px;right:14px;
+    font-size:11px;font-weight:700;color:#0f7b3e;background:#e6f7ed;
+    padding:3px 8px;border-radius:20px;
+  }
+
+  /* HOW */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+  .step{position:relative}
+  .step .num{
+    width:46px;height:46px;border-radius:50%;background:var(--dark);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;
+    margin-bottom:14px;
+  }
+  .step h3{font-size:17px;margin-bottom:8px}
+  .step p{font-size:14.5px;color:var(--muted)}
+
+  /* ===== PORTFOLIO (Сетка карточек) ===== */
+  .portfolio{background:var(--light)}
+  .portfolio-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(450px, 1fr)); gap:24px;
+  }
+  @media(max-width:960px){
+    .portfolio-grid{grid-template-columns:1fr;}
+  }
+
+  .project-card{
+    background:#fff; border-radius:14px; overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,.05); border:1px solid var(--border);
+    display:flex; flex-direction:column;
+  }
+
+  /* Верхняя часть карточки: миниатюры + большое фото */
+  .card-top{
+    display:flex; padding:12px; gap:12px; background:#fff;
+  }
+  
+  /* СКРОЛЛ МИНИАТЮР (без ползунка) */
+  .card-thumbs{
+    display:flex; flex-direction:column; gap:8px; width:60px; flex-shrink:0;
+    overflow-y:auto; max-height: 300px; padding-right: 4px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+  .card-thumbs::-webkit-scrollbar { 
+    display: none; /* Chrome, Safari */
+  }
+
+  .card-thumb{
+    width:60px; height:60px; border-radius:8px; overflow:hidden; cursor:pointer;
+    opacity:0.6; transition:0.2s; border:2px solid transparent; flex-shrink: 0;
+  }
+  .card-thumb img{width:100%; height:100%; object-fit:cover;}
+  .card-thumb.active, .card-thumb:hover{opacity:1; border-color:var(--accent);}
+
+  .card-main-img{
+    flex:1; position:relative; border-radius:10px; overflow:hidden;
+    aspect-ratio: 4/3; background:#eee; cursor:zoom-in;
+  }
+  .card-main-img img{
+    width:100%; height:100%; object-fit:cover; transition:transform 0.3s;
+  }
+  .card-main-img:hover img{transform:scale(1.02);}
+
+  /* Точки на большом фото */
+  .card-dots{
+    position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+    display:flex; gap:5px; background:rgba(0,0,0,0.4); padding:4px 10px; border-radius:10px;
+  }
+  .card-dots span{
+    width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer;
+  }
+  .card-dots span.active{background:#fff;}
+
+  /* Нижняя часть карточки: текст + кнопка */
+  .card-bottom{
+    padding:16px 20px 20px; display:flex; justify-content:space-between; align-items:flex-end; gap:15px;
+  }
+  .card-info h3{font-size:18px; font-weight:800; margin-bottom:6px; color:var(--dark);}
+  .card-info .meta{display:flex; gap:12px; font-size:13px; color:var(--muted); margin-bottom:4px;}
+  .card-info .type{font-size:12.5px; color:#9ca3af;}
+
+  /* КНОПКА В ЦВЕТАХ САЙТА */
+  .card-btn{
+    background:var(--accent); color:var(--dark);
+    border:none; padding:12px 18px; border-radius:8px;
+    font-weight:700; font-size:14px; cursor:pointer;
+    text-align:center; transition:0.2s; flex-shrink:0;
+    display:flex; flex-direction:column; gap:2px;
+  }
+  .card-btn:hover{background:var(--accent-dark); transform:translateY(-1px);}
+  .card-btn small{font-size:10px; font-weight:500; opacity:0.8;}
+
+  @media(max-width:550px){
+    .portfolio-grid{grid-template-columns:1fr;}
+    .card-top{padding:10px;}
+    .card-thumbs{width:50px; max-height:220px; gap:6px;}
+    .card-thumb{width:50px; height:50px;}
+    .card-bottom{flex-direction:column; align-items:stretch; padding:15px;}
+    .card-btn{width:100%;}
+  }
+
+  /* Стили для модального окна (увеличение фото) */
+  .lightbox{
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.9); z-index:1000;
+    display:none; align-items:center; justify-content:center;
+    opacity:0; transition:opacity 0.3s;
+  }
+  .lightbox.show{display:flex; opacity:1;}
+  .lightbox img{
+    max-width:95%; max-height:95%; object-fit:contain; border-radius:8px;
+    box-shadow:0 0 30px rgba(0,0,0,0.5); transform:scale(0.95); transition:transform 0.3s;
+  }
+  .lightbox.show img{transform:scale(1);}
+  .lightbox-close{
+    position:absolute; top:20px; right:30px; color:#fff; font-size:40px;
+    cursor:pointer; line-height:1; transition:0.2s; z-index: 1001;
+  }
+  .lightbox-close:hover{color:var(--accent);}
+
+  /* Стрелки в лайтбоксе */
+  .lightbox-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(255,255,255,0.1); color:#fff; border:none;
+    width:50px; height:50px; border-radius:50%; font-size:30px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:0.2s; z-index: 1001; user-select: none;
+  }
+  .lightbox-nav:hover{background:var(--accent); color:var(--dark);}
+  .lightbox-nav.prev{left:20px;}
+  .lightbox-nav.next{right:20px;}
+  @media(max-width:768px){
+    .lightbox-nav{width:40px; height:40px; font-size:24px;}
+    .lightbox-nav.prev{left:10px;}
+    .lightbox-nav.next{right:10px;}
+  }
+
+  /* MASTERS */
+  .masters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .master{background:var(--light);border-radius:var(--radius);padding:24px;text-align:center}
+  .master .avatar{
+    width:64px;height:64px;border-radius:50%;background:var(--dark);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;
+    margin:0 auto 12px;
+  }
+  .master h3{font-size:16px;margin-bottom:4px}
+  .master p{font-size:13.5px;color:var(--muted)}
+
+  /* ===== SHOPS ===== */
+  .shops{
+    /* 
+      Чтобы поставить свою картинку, замените URL ниже на путь к вашему файлу,
+      например: url("images/shops-bg.jpg")
+    */
+    background:
+      linear-gradient(rgba(28,35,49,.92),rgba(28,35,49,.95)),
+      url("images/shops-bg.jpg?auto=format&fit=crop&w=1600&q=60") center/cover no-repeat;
+    color:#fff;
+  }
+  .shops .section-sub{color:#b9c0cf}
+  .shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .shop-card{
+    background:var(--dark2);border-radius:var(--radius);padding:24px;
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .shop-card h3{font-size:17px;margin-bottom:6px}
+  .shop-card p{font-size:14px;color:#b9c0cf;margin-bottom:10px}
+  .shop-card .disc{font-weight:800;color:var(--accent);font-size:15px}
+
+  /* GUARANTEE */
+  .guarantee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:start}
+  .g-item{display:flex;gap:14px}
+  .g-item .ico{
+    flex:0 0 40px;height:40px;border-radius:10px;background:#fff3df;color:var(--accent-dark);
+    display:flex;align-items:center;justify-content:center;font-size:20px;
+  }
+  .g-item h3{font-size:16px;margin-bottom:4px}
+  .g-item p{font-size:14px;color:var(--muted)}
+
+  /* FORM */
+  .form-section{
+    background:
+      linear-gradient(rgba(20,26,38,.9),rgba(20,26,38,.95)),
+      url("images/form-bg.jpg?auto=format&fit=crop&w=1600&q=60") center/cover no-repeat;
+    color:#fff;padding:70px 0;
+  }
+  .form-flex{display:flex;flex-wrap:wrap;gap:50px;align-items:center;justify-content:space-between}
+  .form-left{flex:1;min-width:280px}
+  .form-left .section-title{color:#fff}
+  .form-left p{color:#cfd6e3;max-width:440px}
+  .form-left .contact-line{color:#cfd6e3;margin-top:20px;font-size:14px}
+  .form-left .phone-big{color:#fff;font-size:22px;font-weight:800;margin-top:10px;display:inline-block}
+
+  .form-box{
+    background:#fff;color:var(--text);border-radius:18px;padding:36px;
+    max-width:520px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3);
+  }
+  .form-box h3{font-size:22px;margin-bottom:6px}
+  .form-box p{font-size:14px;color:var(--muted);margin-bottom:22px}
+  .form-box label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+  .form-box input,.form-box select,.form-box textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;
+    font-size:15px;font-family:inherit;margin-bottom:14px;background:#fafbfc;
+  }
+  .form-box input:focus,.form-box select:focus,.form-box textarea:focus{
+    outline:none;border-color:var(--accent);background:#fff;
+  }
+  .form-box .btn{width:100%}
+  .form-note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+  .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+  @media(max-width:520px){.form-grid-2{grid-template-columns:1fr}}
+
+  .form-socials{display:flex;gap:10px;margin-top:16px}
+  .form-socials a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:11px 8px;border-radius:10px;font-size:14px;font-weight:700;color:#fff;transition:.2s;
+  }
+  .form-socials a svg{width:18px;height:18px;fill:#fff;flex-shrink:0}
+  .form-socials a:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .form-socials .wa{background:var(--wa)}
+  .form-socials .tg{background:var(--tg)}
+  .form-socials .max{background:var(--max)}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+  .faq-item summary{
+    cursor:pointer;font-weight:700;font-size:16px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";font-size:22px;color:var(--accent);font-weight:400}
+  .faq-item[open] summary::after{content:"–"}
+  .faq-item p{font-size:14.5px;color:var(--muted);margin-top:12px;padding-right:30px}
+
+  /* FOOTER */
+  footer{background:var(--dark);color:#b9c0cf;padding:46px 0 30px;font-size:14px}
+  .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-bottom:30px}
+  .footer-grid h4{color:#fff;font-size:15px;margin-bottom:12px}
+  .footer-grid h4 a{color:#fff}
+  .footer-grid h4 a:hover{color:var(--accent)}
+  .footer-grid p{font-size:13.5px;line-height:1.7}
+  .footer-grid a:hover{color:var(--accent)}
+  .footer-socials{display:flex;gap:10px;margin-top:14px}
+  .footer-socials .icon-btn{width:36px;height:36px}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:12.5px;color:#8b93a3}
+  .footer-bottom a{color:#b9c0cf}
+  .footer-bottom a:hover{color:var(--accent)}
+
+  /* FLOATING CONTACTS */
+  .float-contacts{
+    position:fixed;right:16px;bottom:16px;z-index:100;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .float-contacts a{
+    width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);transition:.2s;
+  }
+  .float-contacts a svg{width:26px;height:26px;fill:#fff}
+  .float-contacts .wa{background:var(--wa)}
+  .float-contacts .tg{background:var(--tg)}
+  .float-contacts .max{background:var(--max)}
+  .float-contacts .call{background:var(--accent)}
+  .float-contacts .call svg{fill:var(--dark)}
+  .float-contacts a:hover{transform:scale(1.08)}
+  @media(min-width:861px){.float-contacts{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap header-inner">
+    <div class="logo">
+      <a href="https://prorab196.ru">
+        ПРОРАБ<span>.</span>ЕКБ
+        <small>Александр · личный контроль ремонта</small>
+      </a>
+    </div>
+    <div class="header-right">
+      <a href="#form" class="btn">Вызвать на замер</a>
+      <div class="header-social">
+        <a href="https://wa.me/79221230234" class="icon-btn wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.93-1.15-4.8-4.15-4.95-4.34-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.66-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+        </a>
+        <a href="https://t.me/The_fabo" class="icon-btn tg" target="_blank" rel="noopener" aria-label="Telegram">
+          <svg viewBox="0 0 24 24"><path d="M9.04 15.47l-.38 5.34c.54 0 .78-.23 1.06-.5l2.55-2.45 5.28 3.87c.97.53 1.66.25 1.92-.9l3.48-16.32.01-.01c.31-1.43-.52-1.99-1.47-1.63L1.6 9.9C.2 10.45.22 11.25 1.36 11.6l5.11 1.59L18.3 6.1c.56-.37 1.07-.16.65.21L9.04 15.47z"/></svg>
+        </a>
+        <a href="https://max.ru/+79221230234" class="icon-btn max" target="_blank" rel="noopener" aria-label="MAX">
+          <svg viewBox="0 0 24 24"><path d="M4 3h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9-6-9z"/></svg>
+        </a>
+      </div>
+      <a href="tel:+79221230234" class="header-phone">+7 (922) 123-02-34<small>Ежедневно 9:00–21:00</small></a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <h1>Ремонт квартиры в Екатеринбурге — <em>под моим личным контролем</em></h1>
+    <p class="lead">
+      Меня зовут Александр. Уже более 3 лет я делаю ремонты квартир под своим руководством:
+      сам подбираю мастеров, сам проверяю каждый этап и сам отвечаю за результат.
+      Не компания, не «бригада» — ваш человек на объекте.
+    </p>
+    <div class="hero-cta">
+      <a href="#form" class="btn">Рассчитать стоимость ремонта</a>
+      <a href="#portfolio" class="btn btn-outline">Смотреть примеры работ</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><b>3+</b> года личных ремонтов</div>
+      <div class="trust-item"><b>30+</b> сданных квартир</div>
+      <div class="trust-item"><b>до 2х лет</b> гарантии по договору</div>
+      <div class="trust-item"><b>0 ₽</b> переплаты за «офис»</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about">
+  <div class="wrap">
+    <h2 class="section-title">Обо мне</h2>
+    <p class="section-sub">Коротко — кто я и почему мне можно доверить ремонт.</p>
+    <div class="about-flex">
+      <div class="about-photo">А</div>
+      <div class="about-text">
+        <p>
+          Меня зовут <b>Александр</b>. Более <b>3 лет</b> я занимаюсь ремонтом квартир в Екатеринбурге
+          под своим руководством. За это время сдал <b>30+ объектов</b> — от студий в Ботаническом
+          до трёхкомнатных квартир в Академическом и на ВИЗе.
+        </p>
+        <p>
+          Я не компания и не «бригада под ключ». У меня нет офиса и штата — есть <b>проверенные мастера</b>,
+          с которыми я работаю годами: отдельно электрик, отдельно плиточник, отдельно маляр.
+          Я знаю, кто в чём силён, и ставлю на объект только тех, кого проверил лично.
+        </p>
+        <p class="muted">
+          Я приезжаю на приёмку скрытых работ, проверяю закупки по чекам, каждый день на связи
+          с мастерами и с вами. Если что-то идёт не так — разбираюсь я, а не вы. Именно за это
+          мне и платят: за личную ответственность, а не за вывеску.
+        </p>
+        <div class="about-facts">
+          <div class="fact"><b>3+ года</b><span>личного руководства ремонтами</span></div>
+          <div class="fact"><b>30+ квартир</b><span>сдано в Екатеринбурге</span></div>
+          <div class="fact"><b>6–10</b><span>проверенных мастеров</span></div>
+          <div class="fact"><b>до 2х лет</b><span>гарантии по договору</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAINS ===== -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">Чего вы боитесь — и как я это закрываю</h2>
+    <p class="section-sub">Каждый пункт ниже — реальный страх заказчика. Моя работа — чтобы ни один из них не случился.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="ico">💸</span>
+        <h3>«Смета вырастет в процессе»</h3>
+        <p>Цена фиксируется после замера. Любые доп. работы — только с вашего письменного согласия.</p>
+      </div>
+      <div class="pain-card">
+        <span class="ico">⏳</span>
+        <h3>«Сроки сорвутся»</h3>
+        <p>График работ по этапам, ежедневный контроль мастеров, штрафы за просрочку прописаны в договоре.</p>
+      </div>
+      <div class="pain-card">
+        <span class="ico">🧱</span>
+        <h3>«Схалтурят на скрытых работах»</h3>
+        <p>Я лично приезжаю на приёмку электрики, сантехники и стяжки до закрытия стен.</p>
+      </div>
+      <div class="pain-card">
+        <span class="ico">🚪</span>
+        <h3>«Бросят на полпути»</h3>
+        <p>Оплата поэтапно по факту. Договор на меня, а не на «бригаду». Ответственность — моя.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW ===== -->
+<section class="section about">
+  <div class="wrap">
+    <h2 class="section-title">Как я работаю</h2>
+    <p class="section-sub">Четыре шага от звонка до сдачи объекта.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Замер и смета</h3>
+        <p>Приезжаю бесплатно, обмеряю, обсуждаю ваши задачи. Через 1–2 дня — подробная смета с фиксированной ценой.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Подбор мастеров</h3>
+        <p>Ставлю на объект только тех, кого знаю лично. Электрик, плиточник, маляр — каждый под свою задачу.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Контроль и закупка</h3>
+        <p>Ежедневно на связи с мастерами, лично проверяю скрытые работы. Материалы берём по моим скидкам.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Сдача и гарантия</h3>
+        <p>Принимаем объект вместе. Подписываем акт, даю гарантию до 2 лет и остаюсь на связи после ремонта.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO / GALLERY ===== -->
+<section class="section portfolio" id="portfolio">
+  <div class="wrap">
+    <h2 class="section-title">Примеры работ</h2>
+    <p class="section-sub">Нажмите на большое фото, чтобы рассмотреть детали и пролистать галерею. Слева можно выбрать нужный ракурс.</p>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- Карточки будут генерироваться скриптом -->
+    </div>
+  </div>
+</section>
+
+<!-- Модальное окно для увеличения фото -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+  <button class="lightbox-nav prev" onclick="navLightbox(-1, event)">‹</button>
+  <img id="lightboxImg" src="" alt="Увеличенное фото">
+  <button class="lightbox-nav next" onclick="navLightbox(1, event)">›</button>
+</div>
+
+<!-- ===== MASTERS ===== -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">Мои мастера — не штат, а проверенные люди</h2>
+    <p class="section-sub">У меня нет офиса и «команды из 50 человек». Есть 6–10 мастеров, с которыми я работаю годами и знаю, кто в чём силён.</p>
+    <div class="masters">
+      <div class="master">
+        <div class="avatar">К</div>
+        <h3>Константин</h3>
+        <p>Электрика, слаботочка. 14 лет опыта. Проверяю каждую разводку лично.</p>
+      </div>
+      <div class="master">
+        <div class="avatar">А</div>
+        <h3>Андрей</h3>
+        <p>Плитка и санузлы «под ключ». Любая геометрия, идеальные швы.</p>
+      </div>
+      <div class="master">
+        <div class="avatar">Д</div>
+        <h3>Дмитрий</h3>
+        <p>Штукатурка, стяжка, малярка. Работает по лазеру, без «на глаз».</p>
+      </div>
+      <div class="master">
+        <div class="avatar">М</div>
+        <h3>Михаил</h3>
+        <p>Сантехника, отопление, тёплые полы. Опрессовка — при мне.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOPS ===== -->
+<section class="section shops">
+  <div class="wrap">
+    <h2 class="section-title">Где я покупаю материалы — и ваша выгода</h2>
+    <p class="section-sub">У меня партнёрские условия в магазинах Екатеринбурга. Вы платите меньше, чем в рознице, а чеки я показываю.</p>
+    <div class="shop-grid">
+      <div class="shop-card">
+        <h3>Строительные базы</h3>
+        <p>Черновые материалы: ГКЛ, профиль, смеси, стяжка.</p>
+        <div class="disc">до –10% от розницы</div>
+      </div>
+      <div class="shop-card">
+        <h3>Салоны плитки</h3>
+        <p>Керамогранит и плитка в Екатеринбурге, 3–4 салона-партнёра.</p>
+        <div class="disc">до –7% + бесплатная доставка</div>
+      </div>
+      <div class="shop-card">
+        <h3>Сантехника</h3>
+        <p>Смесители, ванны, инсталляции. Официальные дилеры.</p>
+        <div class="disc">–5% по моей карте</div>
+      </div>
+      <div class="shop-card">
+        <h3>Двери и мебель</h3>
+        <p>Межкомнатные двери, кухни на заказ по партнёрским ценам.</p>
+        <div class="disc">–5% + замер бесплатно</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">Договор и гарантия</h2>
+    <p class="section-sub">Всё, о чём договариваемся, — на бумаге. Это моя репутация, и я её не сливаю.</p>
+    <div class="guarantee-grid">
+      <div class="g-item">
+        <div class="ico">📄</div>
+        <div>
+          <h3>Договор на меня</h3>
+          <p>Не «на бригаду», а на конкретного человека — на Александра. Кому предъявлять — понятно.</p>
+        </div>
+      </div>
+      <div class="g-item">
+        <div class="ico">💳</div>
+        <div>
+          <h3>Оплата поэтапно</h3>
+          <p>Платите за фактически выполненный и принятый этап. Без предоплаты «на всё».</p>
+        </div>
+      </div>
+      <div class="g-item">
+        <div class="ico">🛡️</div>
+        <div>
+          <h3>Гарантия до 2 лет</h3>
+          <p>На все работы. Если что-то пошло не так — приезжаю и решаю, без «это не мы».</p>
+        </div>
+      </div>
+      <div class="g-item">
+        <div class="ico">🧾</div>
+        <div>
+          <h3>Чеки и сметы</h3>
+          <p>Все закупки — с чеками. Вы всегда видите, куда ушёл каждый рубль.</p>
+        </div>
+      </div>
+      <div class="g-item">
+        <div class="ico">📸</div>
+        <div>
+          <h3>Фотоотчёты</h3>
+          <p>Присылаю фото и видео со стройки каждый день. Вы в курсе, даже если в другом городе.</p>
+        </div>
+      </div>
+      <div class="g-item">
+        <div class="ico">👷</div>
+        <div>
+          <h3>Личные приёмки</h3>
+          <p>Скрытые работы принимаю лично, до закрытия стен и заливки стяжки.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section class="form-section" id="form">
+  <div class="wrap form-flex">
+    <div class="form-left">
+      <h2 class="section-title">Бесплатный замер и смета</h2>
+      <p>
+        Приеду, посмотрю объект, обсудим задачи и бюджет. В течение 1–2 дней пришлю
+        подробную смету с фиксированной ценой. Без навязывания и «допродаж».
+      </p>
+      <p class="contact-line">📍 Екатеринбург и пригород · 🕘 ежедневно 9:00–21:00</p>
+      <a href="tel:+79221230234" class="phone-big">+7 (922) 123-02-34</a>
+    </div>
+
+    <form class="form-box" id="leadForm">
+      <h3>Оставьте заявку</h3>
+      <p>Заполните — и отправьте заявку мне в WhatsApp одним нажатием.</p>
+
+      <label for="name">Ваше имя</label>
+      <input id="name" type="text" placeholder="Как к вам обращаться" required>
+
+      <label for="phone">Телефон</label>
+      <input id="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+
+      <div class="form-grid-2">
+        <div>
+          <label for="type">Тип ремонта</label>
+          <select id="type">
+            <option>Косметический</option>
+            <option>Капитальный</option>
+            <option>Дизайнерский</option>
+            <option>Пока не знаю</option>
+          </select>
+        </div>
+        <div>
+          <label for="area">Площадь, м²</label>
+          <input id="area" type="number" min="10" placeholder="Например, 54">
+        </div>
+      </div>
+
+      <label for="comment">Комментарий (необязательно)</label>
+      <textarea id="comment" rows="2" placeholder="Район, сроки, пожелания"></textarea>
+
+      <button type="submit" class="btn">Отправить заявку в WhatsApp</button>
+      <div class="form-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</div>
+
+      <div class="form-socials">
+        <a href="https://wa.me/79221230234" class="wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.93-1.15-4.8-4.15-4.95-4.34-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.66-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://t.me/The_fabo" class="tg" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M9.04 15.47l-.38 5.34c.54 0 .78-.23 1.06-.5l2.55-2.45 5.28 3.87c.97.53 1.66.25 1.92-.9l3.48-16.32.01-.01c.31-1.43-.52-1.99-1.47-1.63L1.6 9.9C.2 10.45.22 11.25 1.36 11.6l5.11 1.59L18.3 6.1c.56-.37 1.07-.16.65.21L9.04 15.47z"/></svg>
+          Telegram
+        </a>
+        <a href="https://max.ru/+79221230234" class="max" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M4 3h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9-6-9z"/></svg>
+          MAX
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">Частые вопросы</h2>
+    <p class="section-sub">Если чего-то нет в списке — позвоните, отвечу лично.</p>
+
+    <details class="faq-item" open>
+      <summary>Вы компания или частный мастер?</summary>
+      <p>Я работаю как частный прораб. Меня зовут Александр, у меня нет офиса и штата — только проверенные мастера под конкретные задачи. Договор заключаете со мной, спрос за результат — тоже с меня. Это дешевле компании и надёжнее «дикой бригады».</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Сколько вы уже работаете?</summary>
+      <p>Более 3 лет делаю ремонты квартир в Екатеринбурге под своим руководством. За это время сдал 30+ объектов — от студий до трёхкомнатных квартир. Работаю по договору и даю гарантию до 2 лет.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Кто несёт ответственность, если мастер ошибётся?</summary>
+      <p>Я. Вы платите мне, я отвечаю за качество всех работ — независимо от того, кто их выполнял. Переделки за счёт виновной стороны, но разбираться с мастерами буду я, а не вы.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Сколько стоит замер и смета?</summary>
+      <p>Замер и смета — бесплатно, если вы в Екатеринбурге. Смета подробная: с объёмами, материалами и ценами. После подписания цена не меняется без вашего письменного согласия.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Как проходит оплата?</summary>
+      <p>Поэтапно. Разбиваем ремонт на этапы (демонтаж, черновые, чистовые и т.д.), после приёмки каждого этапа — оплата. Никакой предоплаты «за весь ремонт».</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Работаете с дизайн-проектом?</summary>
+      <p>Да. Могу работать по вашему проекту или подсказать проверенного дизайнера. Если проект «сырой» — укажу на узкие места до начала работ, чтобы не переделывать.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Что с гарантией после сдачи?</summary>
+      <p>Гарантия до 2 лет на работы. Если в течение этого срока что-то пошло не так по нашей вине — приезжаю и устраняю. Гарантия прописана в договоре.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4><a href="https://prorab196.ru">ПРОРАБ.ЕКБ · Александр</a></h4>
+        <p>Частный прораб в Екатеринбурге. Более 3 лет ремонтов под личным руководством. Проверенные мастера, скидки в магазинах, договор и гарантия.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/79221230234" class="icon-btn wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.93-1.15-4.8-4.15-4.95-4.34-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.66-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+          </a>
+          <a href="https://t.me/The_fabo" class="icon-btn tg" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M9.04 15.47l-.38 5.34c.54 0 .78-.23 1.06-.5l2.55-2.45 5.28 3.87c.97.53 1.66.25 1.92-.9l3.48-16.32.01-.01c.31-1.43-.52-1.99-1.47-1.63L1.6 9.9C.2 10.45.22 11.25 1.36 11.6l5.11 1.59L18.3 6.1c.56-.37 1.07-.16.65.21L9.04 15.47z"/></svg>
+          </a>
+          <a href="https://max.ru/+79221230234" class="icon-btn max" target="_blank" rel="noopener" aria-label="MAX">
+            <svg viewBox="0 0 24 24"><path d="M4 3h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9-6-9z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p><a href="tel:+79221230234">+7 (922) 123-02-34 "Александр"</a><br>
+        <a href="mailto:prorab.196@mail.ru">prorab.196@mail.ru</a><br>
+        Ежедневно 9:00–21:00</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <p>
+          <a href="#portfolio">Примеры работ</a><br>
+          <a href="#form">Замер и смета</a><br>
+          <a href="#form">Задать вопрос</a>
+        </p>
+      </div>
+      <div>
+        <h4>Районы работы</h4>
+        <p>Академический, Ботанический, ВИЗ, Центр, Уралмаш, Пионерский, Автовокзал, Юг-Центр, Верх-Исетский.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 <a href="https://prorab196.ru">ПРОРАБ.ЕКБ</a> · Александр · ИНН 000000000000 · Политика конфиденциальности
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING CONTACTS (mobile) ===== -->
+<div class="float-contacts">
+  <a href="https://wa.me/79221230234" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.93-1.15-4.8-4.15-4.95-4.34-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.66-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+  </a>
+  <a href="https://t.me/The_fabo" class="tg" target="_blank" rel="noopener" aria-label="Telegram">
+    <svg viewBox="0 0 24 24"><path d="M9.04 15.47l-.38 5.34c.54 0 .78-.23 1.06-.5l2.55-2.45 5.28 3.87c.97.53 1.66.25 1.92-.9l3.48-16.32.01-.01c.31-1.43-.52-1.99-1.47-1.63L1.6 9.9C.2 10.45.22 11.25 1.36 11.6l5.11 1.59L18.3 6.1c.56-.37 1.07-.16.65.21L9.04 15.47z"/></svg>
+  </a>
+  <a href="https://max.ru/+79221230234" class="max" target="_blank" rel="noopener" aria-label="MAX">
+    <svg viewBox="0 0 24 24"><path d="M4 3h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9-6-9z"/></svg>
+  </a>
+  <a href="tel:+79221230234" class="call" aria-label="Позвонить">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+</div>
+
+<!-- ===== SCRIPT: отправка заявки в WhatsApp ===== -->
+<script>
+(function () {
+  var form = document.getElementById('leadForm');
+  if (!form) return;
+
+  var MY_WHATSAPP = '79221230234';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name    = document.getElementById('name').value.trim();
+    var phone   = document.getElementById('phone').value.trim();
+    var type    = document.getElementById('type').value;
+    var area    = document.getElementById('area').value.trim();
+    var comment = document.getElementById('comment').value.trim();
+
+    if (!name || !phone) {
+      alert('Пожалуйста, укажите имя и телефон.');
+      return;
+    }
+
+    var lines = [
+      '🔨 Заявка с сайта ПРОРАБ.ЕКБ (Александр)',
+      '— — — — — — — — — —',
+      'Имя: ' + name,
+      'Телефон: ' + phone,
+      'Тип ремонта: ' + type
+    ];
+    if (area)    lines.push('Площадь: ' + area + ' м²');
+    if (comment) lines.push('Комментарий: ' + comment);
+    lines.push('— — — — — — — — — —');
+    lines.push('Отправлено: ' + new Date().toLocaleString('ru-RU'));
+
+    var text = encodeURIComponent(lines.join('\n'));
+    var url  = 'https://wa.me/' + MY_WHATSAPP + '?text=' + text;
+
+    window.open(url, '_blank');
+  });
+})();
+</script>
+
+<!-- ===== SCRIPT: Сетка галереи и лайтбокс ===== -->
+<script>
+const projectsData = [
+  {
+    title: "2-комн. квартира, Академический",
+    area: "58 м²",
+    time: "2,5 мес.",
+    type: "Капитальный ремонт",
+    images: [
+      "images/1 (2).webp",
+      "images/3 (1).webp",
+      "images/4 (2).webp",
+      "images/5 (2).webp"
+    ]
+  },
+  {
+    title: "Студия, Ботанический",
+    area: "34 м²",
+    time: "1,5 мес.",
+    type: "Косметический ремонт",
+    images: [
+      "images/1 (4).webp",
+      "images/2 (2).webp",
+      "images/3 (3).webp",
+      "images/4 (4).webp",
+      "images/5 (4).webp",
+      "images/6 (1).webp"
+    ]
+  },
+  {
+    title: "3-комн. квартира, ВИЗ",
+    area: "84 м²",
+    time: "3,5 мес.",
+    type: "Дизайнерский ремонт",
+    images: [
+      "images/1 (3).webp",
+      "images/2 (1).webp",
+      "images/4 (3).webp",
+      "images/5 (3).webp"
+    ]
+  },
+  {
+    title: "ЖК «Форум»",
+    area: "62 м²",
+    time: "72 дня",
+    type: "Ремонт новостройки",
+    images: [
+      "images/1 (2).webp",
+      "images/3 (1).webp",
+      "images/4 (2).webp"
+    ]
+  }
+];
+
+// Переменные для лайтбокса
+let lightboxProjectIdx = 0;
+let lightboxImageIdx = 0;
+
+function renderPortfolio() {
+  const grid = document.getElementById('portfolioGrid');
+  grid.innerHTML = '';
+
+  projectsData.forEach((project, pIndex) => {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+
+    let thumbsHtml = '';
+    project.images.forEach((img, iIndex) => {
+      const activeClass = iIndex === 0 ? 'active' : '';
+      thumbsHtml += `
+        <div class="card-thumb ${activeClass}" onclick="switchImage(${pIndex}, ${iIndex}, this)">
+          <img src="${img}" alt="Фото ${iIndex + 1}">
+        </div>
+      `;
+    });
+
+    let dotsHtml = '';
+    project.images.forEach((img, iIndex) => {
+      const activeClass = iIndex === 0 ? 'active' : '';
+      dotsHtml += `<span class="${activeClass}" onclick="switchImage(${pIndex}, ${iIndex}, null, event)"></span>`;
+    });
+
+    card.innerHTML = `
+      <div class="card-top">
+        <div class="card-thumbs">
+          ${thumbsHtml}
+        </div>
+        <div class="card-main-img" onclick="openLightbox(${pIndex}, 0)">
+          <img id="main-img-${pIndex}" src="${project.images[0]}" alt="${project.title}">
+          <div class="card-dots">
+            ${dotsHtml}
+          </div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-info">
+          <h3>${project.title}</h3>
+          <div class="meta">
+            <span>📐 ${project.area}</span>
+            <span>⏱ ${project.time}</span>
+          </div>
+          <div class="type">${project.type}</div>
+        </div>
+        <a href="#form" class="card-btn">
+          Рассчитать по своим параметрам
+          <small>Расчет онлайн за 1 мин</small>
+        </a>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+function switchImage(projectIdx, imageIdx, thumbElement, event) {
+  if(event) event.stopPropagation();
+
+  const card = document.querySelectorAll('.project-card')[projectIdx];
+  const imgElement = card.querySelector('.card-main-img img');
+  
+  imgElement.src = projectsData[projectIdx].images[imageIdx];
+  // Обновляем обработчик клика для лайтбокса на актуальную картинку
+  card.querySelector('.card-main-img').onclick = () => openLightbox(projectIdx, imageIdx);
+
+  const thumbs = card.querySelectorAll('.card-thumb');
+  thumbs.forEach((t, i) => t.classList.toggle('active', i === imageIdx));
+
+  const dots = card.querySelectorAll('.card-dots span');
+  dots.forEach((d, i) => d.classList.toggle('active', i === imageIdx));
+
+  if (thumbElement) {
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumbElement.classList.add('active');
+  }
+}
+
+// ==== Лайтбокс (Увеличение и пролистывание) ====
+function openLightbox(projectIdx, imageIdx) {
+  lightboxProjectIdx = projectIdx;
+  lightboxImageIdx = imageIdx;
+  
+  updateLightboxView();
+
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.add('show');
+  document.body.style.overflow = 'hidden'; // Отключаем скролл страницы
+}
+
+function updateLightboxView() {
+  const project = projectsData[lightboxProjectIdx];
+  document.getElementById('lightboxImg').src = project.images[lightboxImageIdx];
+}
+
+function navLightbox(direction, event) {
+  if(event) event.stopPropagation();
+  
+  const project = projectsData[lightboxProjectIdx];
+  const totalImages = project.images.length;
+  
+  lightboxImageIdx = (lightboxImageIdx + direction + totalImages) % totalImages;
+  updateLightboxView();
+}
+
+function closeLightbox(e) {
+  if (e.target.id === 'lightbox' || e.target.className === 'lightbox-close') {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('show');
+    document.body.style.overflow = ''; // Возвращаем скролл
+  }
+}
+
+// Управление с клавиатуры
+document.addEventListener('keydown', (e) => {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox.classList.contains('show')) return;
+
+  if (e.key === 'Escape') {
+    closeLightbox({target: {id: 'lightbox'}});
+  } else if (e.key === 'ArrowLeft') {
+    navLightbox(-1);
+  } else if (e.key === 'ArrowRight') {
+    navLightbox(1);
+  }
+});
+
+// Поддержка свайпов в лайтбоксе
+let touchStartX = 0;
+const lightbox = document.getElementById('lightbox');
+
+lightbox.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+}, { passive: true });
+
+lightbox.addEventListener('touchend', (e) => {
+  const touchEndX = e.changedTouches[0].clientX;
+  const diff = touchEndX - touchStartX;
+  
+  if (Math.abs(diff) > 50) {
+    navLightbox(diff > 0 ? -1 : 1);
+  }
+});
+
+// Запускаем рендер при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+  renderPortfolio();
+});
+</script>
+
+</body>
+</html>
